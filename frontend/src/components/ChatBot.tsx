@@ -16,8 +16,9 @@ const SUGGESTED = [
   "Tell me about NeuroTrack",
 ];
 
-const API_BASE = "http://localhost:8000";
-
+  const API_BASE =
+  process.env.REACT_APP_API_URL ||
+  "http://localhost:8000";
 
 export default function ChatBot({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
