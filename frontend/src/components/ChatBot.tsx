@@ -18,7 +18,7 @@ const SUGGESTED = [
 
   const API_BASE =
   process.env.REACT_APP_API_URL ||
-  "http://localhost:8000";
+  "https://rushil-ai-portfolio.onrender.com";
 
 export default function ChatBot({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
