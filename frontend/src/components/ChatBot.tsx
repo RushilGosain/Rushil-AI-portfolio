@@ -16,8 +16,7 @@ const SUGGESTED = [
   "Tell me about NeuroTrack",
 ];
 
-  const API_BASE = "https://rushil-ai-portfolio.onrender.com";
-
+const API_BASE = "https://rushil-ai-portfolio.onrender.com";
 export default function ChatBot({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -57,10 +56,15 @@ export default function ChatBot({ isOpen, onClose }: { isOpen: boolean; onClose:
 
     try {
       const history = messages.map((m) => ({ role: m.role, content: m.content }));
-      const res = await fetch(`${API_BASE}/chat`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text.trim(), history }),
+      const res = await fetch("https://rushil-ai-portfolio.onrender.com/chat", {
+       method: "POST",
+      headers: {
+      "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    message: text.trim(),
+    history,
+  }),
       });
 
       if (!res.ok) throw new Error("API error");
