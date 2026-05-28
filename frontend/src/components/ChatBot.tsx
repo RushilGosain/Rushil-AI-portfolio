@@ -16,7 +16,7 @@ const SUGGESTED = [
   "Tell me about NeuroTrack",
 ];
 
-const API_URL = "https://rushil-ai-portfolio.onrender.com/chat";
+const API_URL = "https://rushil-ai-portfolio.onrender.com";
 
 export default function ChatBot({
   isOpen,
