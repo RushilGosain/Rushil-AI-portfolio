@@ -1,0 +1,81 @@
+.about { background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+  line-height: 1.75;
+}
+.about-body {
+  color: var(--silver);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.highlight {
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.8rem;
+}
+.chip {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--silver);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  transition: var(--transition);
+}
+.chip:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
+
+.about-card {
+  padding: 2rem;
+  position: sticky;
+  top: 110px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--teal);
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.edu-item:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.edu-icon { font-size: 1.4rem; flex-shrink: 0; }
+.edu-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.edu-org { font-size: 0.82rem; color: var(--silver); margin-bottom: 2px; }
+.edu-year { font-size: 0.78rem; color: var(--violet); font-weight: 500; }
+.edu-score { font-size: 0.82rem; color: var(--teal); font-weight: 600; margin-bottom: 2px; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-card { position: static; }
+}

@@ -1,0 +1,26 @@
+.contact { background: var(--bg); }
+.contact-sub { text-align: center; color: var(--silver); margin-bottom: 2.5rem; font-size: 1.05rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+.contact-card:hover { transform: translateY(-4px); border-color: var(--border-glow); box-shadow: var(--glow); }
+.contact-card:hover .contact-value { color: var(--teal); }
+
+.contact-icon { font-size: 1.5rem; flex-shrink: 0; }
+.contact-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.contact-value { font-size: 0.9rem; color: var(--text); font-weight: 500; transition: var(--transition); }
