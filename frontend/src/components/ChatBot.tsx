@@ -16,9 +16,7 @@ const SUGGESTED = [
   "Tell me about NeuroTrack",
 ];
 
-  const API_BASE =
-  process.env.REACT_APP_API_URL ||
-  "https://rushil-ai-portfolio.onrender.com";
+  const API_BASE = "https://rushil-ai-portfolio.onrender.com";
 
 export default function ChatBot({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
