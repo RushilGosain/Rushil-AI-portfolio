@@ -130,7 +130,7 @@ async def call_ai(messages: list) -> str:
                     "Content-Type": "application/json",
                 },
                 json={
-                    "model": "llama-3.1-8b-instant",
+                    "model": "llama3-8b-8192",
                     "messages": messages,
                     "temperature": 0.7,
                     "max_tokens": 400,
