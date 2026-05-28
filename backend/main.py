@@ -68,16 +68,19 @@ Commonwealth Bank (Forage)
 
 === PROJECTS ===
 
-1. NeuroTrack
-AI-powered mental health tracking platform
+1.Live Chat App** | Next.js, Convex, Clerk, Tailwind CSS
+Developed a real-time chat platform with direct messaging, group chats, live typing indicators, and online presence tracking. Implemented secure authentication using Clerk and built scalable real-time backend features with Convex.
 
-2. Expert Booking Platform
-Full-stack booking system with authentication
+2.AI-Enabled Healthcare App** | HTML, CSS, JavaScript, Flask, OpenAI API, MySQL
+Built an AI-powered healthcare web application with secure backend processing and personalized health recommendations using OpenAI API. Designed a responsive frontend and integrated MySQL for efficient data management.
 
-3. Portfolio Website
+3.Expert Booking Platform** | MongoDB, Express.js, React, Node.js
+Created a full-stack expert booking platform with appointment scheduling, booking management, and secure JWT-based authentication. Developed RESTful APIs, duplicate booking prevention, and deployed the platform using Netlify, Render, and MongoDB Atlas.
+
+4. Portfolio Website
 Interactive portfolio with animations
 
-4. Blittz Quiz
+5. Blittz Quiz
 Quiz application built with Next.js
 
 === PERSONALITY ===

@@ -66,17 +66,17 @@ const About: React.FC = () => {
               </div>
             ))}
 
-            <a href="/rushil-resume.pdf" target="_blank"
+            <a href="/resume.pdf" target="_blank"
    className="btn"
    style={{
-     marginTop: '1rem',
+     marginTop: '1rem', 
      width: '100%',
      justifyContent: 'center',
      background: 'linear-gradient(135deg, #0066FF, #8B5CF6)',
      color: 'white',
      borderRadius: 15
    }}>
-   📄 View My CV
+   📄 View My Resume
 </a>
       </div>
       </div>

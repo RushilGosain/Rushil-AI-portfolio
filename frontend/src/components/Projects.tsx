@@ -2,10 +2,10 @@ import React from 'react';
 
 const projects = [
   {
-    title: 'NeuroTrack – AI Mental Health Platform',
-    desc: 'AI-based platform to monitor and analyze mental health trends for students and professionals, providing personalized insights through sentiment analysis and text summarization.',
-    tags: ['HTML/CSS/JS', 'Flask', 'OpenAI API', 'MySQL'],
-    github: 'https://github.com/RushilGosain/NEUROTRACK.git',
+    title: 'Live Chat App ',
+    desc: 'Developed a real-time chat platform with direct messaging, group chats, live typing indicators, and online presence tracking. Implemented secure authentication using Clerk and built scalable real-time backend features with Convex.',
+    tags: ['Next.js', 'Convex', 'Clerk', 'TailwindCSS'],
+    github: 'https://github.com/RushilGosain/livechat-app',
     icon: '🧠',
     color: '#EC4899',
   },
@@ -18,10 +18,10 @@ const projects = [
     color: '#00F5FF',
   },
   {
-    title: 'Blittz-Quiz',
-    desc: 'Interactive quiz application with Next.js 13 App Router, TypeScript, and Tailwind CSS. Users can sign in, choose categories, and attempt quizzes with a clean, responsive UI.',
-    tags: ['Next.js', 'TypeScript', 'NextAuth.js', 'API'],
-    github: 'https://github.com/RushilGosain/blittz-quiz',
+    title: 'Healthcare App',
+    desc: 'Built an AI-powered healthcare web application with secure backend processing and personalized health recommendations using OpenAI API. Designed a responsive frontend and integrated MySQL for efficient data management.',
+    tags: ['OpenAI API', 'MySQL', 'Flask', 'JavaScript', 'HTML', 'CSS'],
+    github: 'https://github.com/RushilGosain/NEUROTRACK',
     icon: '⚡',
     color: '#8B5CF6',
   },
