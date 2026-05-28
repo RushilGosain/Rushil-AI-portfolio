@@ -16,8 +16,7 @@ const SUGGESTED = [
   "Tell me about NeuroTrack",
 ];
 
-// ✅ Your deployed backend URL
-const API_BASE = "https://rushil-ai-portfolio.onrender.com";
+const API_URL = "https://rushil-ai-portfolio.onrender.com/chat";
 
 export default function ChatBot({
   isOpen,
@@ -49,18 +48,18 @@ export default function ChatBot({
   }, [isOpen]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
   }, [messages, loading]);
 
   const send = async (text: string) => {
     if (!text.trim() || loading) return;
 
-    const cleanText = text.trim();
-
     const userMsg: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: cleanText,
+      content: text.trim(),
       timestamp: new Date(),
     };
 
@@ -74,37 +73,38 @@ export default function ChatBot({
         content: m.content,
       }));
 
-      // ✅ Correct API request
-      const res = await fetch(`${API_BASE}/chat`, {
+      console.log("Sending request to:", API_URL);
+
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: cleanText,
-          history: history,
+          message: text.trim(),
+          history,
         }),
       });
 
-      // ✅ Better debugging
+      console.log("Response status:", res.status);
+
       if (!res.ok) {
-        const errText = await res.text();
-        console.error("Backend Error:", errText);
-        throw new Error(errText);
+        throw new Error(`HTTP Error: ${res.status}`);
       }
 
       const data = await res.json();
 
-      const assistantMsg: Message = {
-        id: Date.now().toString() + "r",
-        role: "assistant",
-        content: data.response,
-        timestamp: new Date(),
-      };
-
-      setMessages((m) => [...m, assistantMsg]);
+      setMessages((m) => [
+        ...m,
+        {
+          id: Date.now().toString() + "r",
+          role: "assistant",
+          content: data.response,
+          timestamp: new Date(),
+        },
+      ]);
     } catch (error) {
-      console.error("Chat Error:", error);
+      console.error("CHATBOT ERROR:", error);
 
       setMessages((m) => [
         ...m,
@@ -112,7 +112,7 @@ export default function ChatBot({
           id: Date.now().toString() + "e",
           role: "assistant",
           content:
-            "Sorry, I'm having trouble connecting right now. Please try again later.",
+            "⚠️ Server is waking up or temporarily unavailable. Please try again in a few seconds.",
           timestamp: new Date(),
         },
       ]);
@@ -124,6 +124,7 @@ export default function ChatBot({
   return (
     <div className={`chatbot-overlay ${isOpen ? "open" : ""}`}>
       <div className="chatbot-window glass">
+
         {/* Header */}
         <div className="chat-header">
           <div className="chat-avatar">RG</div>
@@ -171,6 +172,7 @@ export default function ChatBot({
             </div>
           ))}
 
+          {/* Loading animation */}
           {loading && (
             <div className="message-wrap assistant">
               <div className="msg-avatar">🤖</div>
@@ -186,7 +188,7 @@ export default function ChatBot({
           <div ref={bottomRef} />
         </div>
 
-        {/* Suggestions */}
+        {/* Suggested questions */}
         {messages.length <= 1 && (
           <div className="chat-suggestions">
             {SUGGESTED.map((s) => (
@@ -208,9 +210,11 @@ export default function ChatBot({
             className="chat-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) =>
-              e.key === "Enter" && !e.shiftKey && send(input)
-            }
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                send(input);
+              }
+            }}
             placeholder="Ask me anything about Rushil..."
             disabled={loading}
           />
