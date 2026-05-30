@@ -79,8 +79,16 @@ Built an AI-powered healthcare web application with secure backend processing an
 3.Expert Booking Platform** | MongoDB, Express.js, React, Node.js
 Created a full-stack expert booking platform with appointment scheduling, booking management, and secure JWT-based authentication. Developed RESTful APIs, duplicate booking prevention, and deployed the platform using Netlify, Render, and MongoDB Atlas.
 
-4. Portfolio Website
-Interactive portfolio with animations
+4. DocChat – AI-Powered Document Chatbot
+
+Developed a full-stack Retrieval-Augmented Generation (RAG) application that enables users to upload documents and interact with them through natural language conversations. Implemented semantic document retrieval using vector embeddings and LangChain, delivering context-aware responses with source attribution through a responsive and modern user interface.
+
+Next.js
+FastAPI
+LangChain
+Hugging Face
+ChromaDB
+TypeScript
 
 5. Blittz Quiz
 Quiz application built with Next.js
