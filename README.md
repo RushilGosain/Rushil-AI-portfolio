@@ -6,7 +6,7 @@ A modern AI-powered portfolio website showcasing my skills, projects, certificat
 
 ## 🚀 Live Demo
 
-🌎 **Portfolio Website:** [https://rushil-ai-portfolio.netlify.app/]
+🌎 **Portfolio Website:** [ https://rushil-ai-portfolio.netlify.app/ ]
 
 
 ---
