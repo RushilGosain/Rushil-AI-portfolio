@@ -66,7 +66,7 @@ const About: React.FC = () => {
               </div>
             ))}
 
-            <a href="/resume.pdf" target="_blank"
+            <a href="/Rushil_Resume.pdf" target="_blank"
    className="btn"
    style={{
      marginTop: '1rem', 
